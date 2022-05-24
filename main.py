@@ -1,0 +1,1 @@
+print("Por favor, elige tu parada de la carpeta y ejecuta su script para poder ver los horarios.")
