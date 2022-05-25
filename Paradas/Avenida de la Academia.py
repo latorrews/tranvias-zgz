@@ -1,13 +1,13 @@
 import requests
 import json
 
-r1 = requests.get(url = "https://www.zaragoza.es/api/recurso/urbanismo-infraestructuras/tranvia/101.json?srsname=wgs84")
-data1 = r1.json()
+r = requests.get(url = "https://www.zaragoza.es/api/recurso/urbanismo-infraestructuras/tranvia/101.json?srsname=wgs84")
+data = r.json()
 
-destino1 = data1["destinos"][0]["destino"]
-tiempo1 = data1["destinos"][0]["minutos"]
-destino2 = data1["destinos"][1]["destino"]
-tiempo2 = data1["destinos"][1]["minutos"]
+destino1 = data["destinos"][0]["destino"]
+tiempo1 = data["destinos"][0]["minutos"]
+destino2 = data["destinos"][1]["destino"]
+tiempo2 = data["destinos"][1]["minutos"]
 
 if tiempo1 == 0:
   print("El primer tranvía con destino a ", destino1, " ya está en la parada.")
