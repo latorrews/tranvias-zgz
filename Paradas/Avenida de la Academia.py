@@ -4,36 +4,17 @@ import json
 r1 = requests.get(url = "https://www.zaragoza.es/api/recurso/urbanismo-infraestructuras/tranvia/101.json?srsname=wgs84")
 data1 = r1.json()
 
-r2 = requests.get(url = "https://www.zaragoza.es/api/recurso/urbanismo-infraestructuras/tranvia/102.json?srsname=wgs84")
-data2 = r2.json()
+destino1 = data1["destinos"][0]["destino"]
+tiempo1 = data1["destinos"][0]["minutos"]
+destino2 = data1["destinos"][1]["destino"]
+tiempo2 = data1["destinos"][1]["minutos"]
 
-destino11 = data1["destinos"][0]["destino"]
-tiempo11 = data1["destinos"][0]["minutos"]
-destino12 = data1["destinos"][1]["destino"]
-tiempo12 = data1["destinos"][1]["minutos"]
-
-destino21 = data2["destinos"][0]["destino"]
-tiempo21 = data2["destinos"][0]["minutos"]
-destino22 = data2["destinos"][1]["destino"]
-tiempo22 = data2["destinos"][1]["minutos"]
-
-if tiempo11 == 0:
-  print("El primer tranvía con destino a ", destino11, " ya está en la parada.")
+if tiempo1 == 0:
+  print("El primer tranvía con destino a ", destino1, " ya está en la parada.")
 else:
-  print("El primer tranvía con destino a ", destino11, " tarda ", tiempo11, " minutos.")
+  print("El primer tranvía con destino a ", destino1, " tarda ", tiempo1, " minutos.")
 
-if tiempo12 == 0:
-  print("El segundo tranvía con destino a ", destino12, " ya está en la parada.")
+if tiempo2 == 0:
+  print("El segundo tranvía con destino a ", destino2, " ya está en la parada.")
 else:
-  print("El segundo tranvía con destino a ", destino12, " tarda ", tiempo12, " minutos.")
-
-
-if tiempo21 == 0:
-  print("El tercer tranvía con destino a ", destino21, " ya está en la parada.")
-else:
-  print("El tercer tranvía con destino a ", destino21, " tarda ", tiempo21, " minutos.")
-
-if tiempo22 == 0:
-  print("El cuarto tranvía con destino a ", destino22, "ya está en la parada.")
-else:
-  print("El cuarto tranvía con destino a ", destino22, " tarda ", tiempo22, " minutos.")
+  print("El segundo tranvía con destino a ", destino2, " tarda ", tiempo2, " minutos.")
